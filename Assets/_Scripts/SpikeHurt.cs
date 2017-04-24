@@ -17,7 +17,7 @@ public class SpikeHurt : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		//StartCoroutine("OnTriggerEnter2D");
 	}
 
     // Update is called once per frame
@@ -66,26 +66,31 @@ public class SpikeHurt : MonoBehaviour {
     {
         /*if (other.tag == "Buddy")
         {
-            */if (other.tag == "Buddy")
+            */while (other.tag == "spike")
             {
-                for (int i=0; i<2; i++)
+				FindObjectOfType<GameManager> ().HurtP1 ();
+				yield return new WaitForSeconds (1);
+                /*for (int i=0; i<2; i++)
                 {
                     FindObjectOfType<GameManager>().HurtP1();
                     yield return new WaitForSeconds(1);
-                }
+                }*/
                 
             }/*
             FindObjectOfType<GameManager>().HurtP1();
             FindObjectOfType<GameManager>().HurtP1();*/
 
         //}
-        if (other.tag == "Stela")
+        while (other.tag == "spike")
         {
-            for (int i = 0; i < 2; i++)
+			
+			FindObjectOfType<GameManager>().HurtP2();
+			yield return new WaitForSeconds (1);
+            /*for (int i = 0; i < 2; i++)
             {
                 FindObjectOfType<GameManager>().HurtP2();
                 yield return new WaitForSeconds(1);
-            }
+            }*/
         }
     }
 }
