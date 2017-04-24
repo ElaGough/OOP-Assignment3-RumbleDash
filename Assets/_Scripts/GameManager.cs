@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour {
 	{
 		while (true) {
 			if (isPaused) {
-				yield return NULL;
+				yield return null;
 			} else {
 				yield return new WaitForSeconds (1);
 				timeRemaining--;
