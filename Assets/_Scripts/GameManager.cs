@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour {
 	public int timeRemaining = 10;
 	public Text countdownText;
 
+	//for pause screen
+	public bool IsPaused;
+	public GameObject pauseScreen;
+
     // Use this for initialization
     void Start () {
 		StartCoroutine("LoseTime");
@@ -123,6 +127,9 @@ public class GameManager : MonoBehaviour {
         {
             SceneManager.LoadScene(mainMenu);
         }
+		if (Input.GetKeyDown (KeyCode.Space)) {
+
+		}
     }
 
 
