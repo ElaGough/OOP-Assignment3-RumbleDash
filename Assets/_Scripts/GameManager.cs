@@ -114,12 +114,11 @@ public class GameManager : MonoBehaviour {
 		//Checking isPaused
 		if (isPaused) {
 			pauseScreen.SetActive (true);
-			StopCoroutine ("LoseTime");
+			//StopCoroutine ("LoseTime");
 			player1.SetActive(false);
 			player2.SetActive(false);
-		} else {
+		} if (!isPaused) {
 			pauseScreen.SetActive (false);
-			StartCoroutine ("LoseTime");
 			player1.SetActive(true);
 			player2.SetActive(true);
 		}
@@ -188,8 +187,12 @@ public class GameManager : MonoBehaviour {
 	IEnumerator LoseTime()
 	{
 		while (true) {
-			yield return new WaitForSeconds (1);
-			timeRemaining--;
+			if (isPaused) {
+				yield return NULL;
+			} else {
+				yield return new WaitForSeconds (1);
+				timeRemaining--;
+			}
 		}
 	}
 }
