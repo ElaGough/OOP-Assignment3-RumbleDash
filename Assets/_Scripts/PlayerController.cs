@@ -26,13 +26,6 @@ public class PlayerController : MonoBehaviour {
 
     public AudioSource throwSound;
 
-	//when player is in contatct with enemies
-	public float knockback;
-	public float knockbackLength;
-	public float knockbackCount;
-	public bool knockFromRight;
-	public bool knockFromLeft;
-
 
 	// Use this for initialization
 	void Start () {
