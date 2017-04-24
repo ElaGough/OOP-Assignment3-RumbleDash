@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 	public Text countdownText;
 
 	//for pause screen
-	public bool IsPaused;
+	public bool isPaused;
 	public GameObject pauseScreen;
 
     // Use this for initialization
@@ -111,10 +111,14 @@ public class GameManager : MonoBehaviour {
 		}
 
 
+		//Checking isPaused
+		if (isPaused) {
+			pauseScreen.SetActive (true);
+		} else {
+			pauseScreen.SetActive (false);
+		}
 
-        //Winning Screen for getting to the flag - replay, new game, menu
-        
-
+        //Winning and Pause Screen for getting to the flag - replay, new game, menu
         if (Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -128,7 +132,7 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene(mainMenu);
         }
 		if (Input.GetKeyDown (KeyCode.Space)) {
-
+			isPaused = !isPaused;
 		}
     }
 
