@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour {
     public AudioSource throwSound;
 
 	public float knockback;
+	public float knockbackLength;
+	public float knockbackCount;
 
 
 	// Use this for initialization
