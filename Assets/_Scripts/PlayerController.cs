@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
 
     public AudioSource throwSound;
 
+	public float knockback;
+
 
 	// Use this for initialization
 	void Start () {
@@ -76,4 +78,20 @@ public class PlayerController : MonoBehaviour {
         anim.SetFloat("Speed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("Grounded", isGrounded);
     }
+
+	IEnumerator OnTriggerEnter2D(Collider2D other)
+	{
+		while (other.tag == "Enemy" && tag == "Player1" && isGrounded == false)
+		{
+			FindObjectOfType<GameManager> ().HurtP1 ();
+			yield return new WaitForSeconds (1);
+
+		}
+		while (other.tag == "Enemy" && tag == "Player2" && isGrounded == false)
+		{
+			FindObjectOfType<GameManager> ().HurtP2 ();
+			yield return new WaitForSeconds (1);
+
+		}
+	}
 }

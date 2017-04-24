@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour {
     public void HurtP1()
     {
 		if (p1active == true &&
-			p2active == true || other.tag == "spike") {
+			p2active == true) {
 			P1Life -= 1;
 
 			for (int i = 0; i < p1Hearts.Length; i++) {
@@ -165,14 +165,6 @@ public class GameManager : MonoBehaviour {
 
 	//timer
 	IEnumerator LoseTime()
-	{
-		while (true) {
-			yield return new WaitForSeconds (1);
-			timeRemaining--;
-		}
-	}
-
-	IEnumerator LoseHeart()
 	{
 		while (true) {
 			yield return new WaitForSeconds (1);
