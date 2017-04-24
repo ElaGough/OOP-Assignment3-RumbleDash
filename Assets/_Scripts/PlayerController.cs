@@ -86,16 +86,16 @@ public class PlayerController : MonoBehaviour {
 
 	IEnumerator OnTriggerEnter2D(Collider2D other)
 	{
-		while (other.tag == "Enemy" && tag == "Player1" && isGrounded == false)
+		if (other.tag == "Enemy" && tag == "Player1")
 		{
 			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 			FindObjectOfType<GameManager> ().HurtP1 ();
 			yield return new WaitForSeconds (1);
 
 		}
-		while (other.tag == "Enemy" && tag == "Player2" && isGrounded == false)
+		if (other.tag == "Enemy" && tag == "Player2")
 		{
-			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+			theRB.velocity = new Vector2(moveSpeed, jumpForce);
 			FindObjectOfType<GameManager> ().HurtP2 ();
 			yield return new WaitForSeconds (1);
 
