@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour {
 	public float knockback;
 	public float knockbackLength;
 	public float knockbackCount;
-	public float knockFromRight;
-	public float knockFromLeft;
+	public bool knockFromRight;
+	public bool knockFromLeft;
 
 
 	// Use this for initialization
@@ -88,12 +88,14 @@ public class PlayerController : MonoBehaviour {
 	{
 		while (other.tag == "Enemy" && tag == "Player1" && isGrounded == false)
 		{
+			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 			FindObjectOfType<GameManager> ().HurtP1 ();
 			yield return new WaitForSeconds (1);
 
 		}
 		while (other.tag == "Enemy" && tag == "Player2" && isGrounded == false)
 		{
+			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 			FindObjectOfType<GameManager> ().HurtP2 ();
 			yield return new WaitForSeconds (1);
 
