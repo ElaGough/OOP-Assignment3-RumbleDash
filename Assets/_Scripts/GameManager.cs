@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour {
 		//Checking isPaused
 		if (isPaused) {
 			pauseScreen.SetActive (true);
-			//StopCoroutine ("LoseTime");
 			player1.SetActive(false);
 			player2.SetActive(false);
 		} if (!isPaused) {
