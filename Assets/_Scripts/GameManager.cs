@@ -114,8 +114,14 @@ public class GameManager : MonoBehaviour {
 		//Checking isPaused
 		if (isPaused) {
 			pauseScreen.SetActive (true);
+			StopCoroutine ("LoseTime");
+			player1.SetActive(false);
+			player2.SetActive(false);
 		} else {
 			pauseScreen.SetActive (false);
+			StartCoroutine ("LoseTime");
+			player1.SetActive(true);
+			player2.SetActive(true);
 		}
 
         //Winning and Pause Screen for getting to the flag - replay, new game, menu
