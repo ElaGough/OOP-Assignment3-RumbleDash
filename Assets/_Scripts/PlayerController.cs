@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour {
 	public float knockback;
 	public float knockbackLength;
 	public float knockbackCount;
+	public float knockFromRight;
+	public float knockFromLeft;
 
 
 	// Use this for initialization
