@@ -132,7 +132,11 @@ public class GameManager : MonoBehaviour {
             SceneManager.LoadScene(mainMenu);
         }
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			isPaused = !isPaused;
+			if (isPaused) {
+				isPaused = false;
+			} else if (!isPaused) {
+				isPaused = true;
+			}
 		}
     }
 
