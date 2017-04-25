@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		
+
 		StartCoroutine("LoseTime");
 
 		//character select
@@ -56,11 +58,13 @@ public class GameManager : MonoBehaviour {
 		{
 			player1  = GameObject.Find("Buddy1");
 			buddy1.SetActive (true);
+			stela1.SetActive (false);
 		}
-		if (stela1.activeSelf)
+		else if (stela1.activeSelf)
 		{
 			player1  = GameObject.Find("Stela1");
 			stela1.SetActive (true);
+			buddy1.SetActive (false);
 		}
 		/*if (other1.activeSelf)
 		{
@@ -78,11 +82,13 @@ public class GameManager : MonoBehaviour {
 		{
 			player2  = GameObject.Find("Buddy2");
 			buddy2.SetActive (true);
+			stela2.SetActive (false);
 		}
-		if (stela2.activeSelf)
+		else if (stela2.activeSelf)
 		{
 			player2 = GameObject.Find("Stela2");
 			stela2.SetActive (true);
+			buddy2.SetActive (false);
 		}
 		/*if (other2.activeSelf)
 		{
@@ -98,9 +104,13 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		buddy1 = GameObject.Find("Buddy1");
+		stela1 = GameObject.Find("Stela1");
+		buddy2 = GameObject.Find("Buddy2");
+		stela2 = GameObject.Find("Stela2");
 
 		//win screens
-        if ((P1Life <= 0) && (P2Life <= 0))
+		if ((P1Life <= 0 && P2Life <= 0) || (p1active == false && p2active == false))
         {
 			StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
@@ -108,7 +118,7 @@ public class GameManager : MonoBehaviour {
             player2.SetActive(false);
             draw.SetActive(true);
         }
-        else if ((P1Life <= 0) && (P2Life > 0))
+		else if ((P1Life <= 0 && P2Life > 0) || p1active == false)
         {
 			StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
@@ -119,7 +129,7 @@ public class GameManager : MonoBehaviour {
 				P2Life++;
 			}
         }
-        else if ((P2Life <= 0) && (P1Life > 0))
+		else if ((P2Life <= 0 && P1Life > 0) || p2active == false)
         {
 			StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
@@ -146,7 +156,7 @@ public class GameManager : MonoBehaviour {
 				//StopCoroutine ("LoseTime");
 				//timer.SetActive (false);
 			}
-			else if (P1Life < P2Life)
+			else if (P1Life < P2Life || p1active == false)
 			{
 				p1active = false;
 				player1.SetActive(false);
@@ -154,7 +164,7 @@ public class GameManager : MonoBehaviour {
 				//StopCoroutine ("LoseTime");
 				//timer.SetActive (false);
 			}
-			else if (P1Life > P2Life)
+			else if (P1Life > P2Life || p2active == false)
 			{
 				p2active = false;
 				player2.SetActive(false);
