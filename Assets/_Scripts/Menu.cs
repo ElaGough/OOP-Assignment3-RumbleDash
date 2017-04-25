@@ -12,8 +12,6 @@ public class Menu : MonoBehaviour {
     public string controlsScene;
 	public string characterScene;
 	public string levelsScene;
-	public string snowLevelScene;
-	public string spaceLevelScene;
 
     public void MenuScene()
     {
@@ -43,16 +41,6 @@ public class Menu : MonoBehaviour {
 	public void levelSelect()
 	{
 		SceneManager.LoadScene(levelsScene);
-	}
-
-	public void SnowLevel()
-	{
-		SceneManager.LoadScene(snowLevelScene);
-	}
-
-	public void SpaceLevel()
-	{
-		SceneManager.LoadScene(spaceLevelScene);
 	}
 
     public void QuitGame()

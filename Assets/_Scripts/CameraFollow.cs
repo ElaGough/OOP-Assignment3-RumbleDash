@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CameraFollow : MonoBehaviour {
 
@@ -62,54 +61,46 @@ public class CameraFollow : MonoBehaviour {
             camSizeX * Screen.height / Screen.width, minSizeY), minSizeY, maxSizeY);
     }
 	void Start() {
-		Scene currentScene = SceneManager.GetActiveScene ();
-		string sceneName = currentScene.name;
 
-		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
-			//player1
-			if (buddy1.activeSelf) {
-				buddy1 = GameObject.Find ("Buddy1");
-				player1 = buddy1.transform;
-				buddy1.SetActive (true);
-			}
-			if (stela1.activeSelf) {
-				stela1 = GameObject.Find ("Stela1");
-				player1 = stela1.transform;
-				stela1.SetActive (true);
-			}
-			/*if (other1.activeSelf)
-			{
-				Player1  = GameObject.Find("Other1");
-				other1.SetActive (true);
-			}
-			if (otherr1.activeSelf)
-			{
-				Player1  = GameObject.Find("Otherr1");
-				otherr1.SetActive (true);
-			}*/
-
-			//player2
-			if (buddy2.activeSelf) {
-				buddy2 = GameObject.Find ("Buddy2");
-				player2 = buddy2.transform;
-				buddy2.SetActive (true);
-			}
-			if (stela2.activeSelf) {
-				stela2 = GameObject.Find ("Stela2");
-				player2 = stela2.transform;
-				stela2.SetActive (true);
-			}
-			/*if (other2.activeSelf)
-			{
-				Player2  = GameObject.Find("Other2");
-				other2.SetActive (true);
-			}
-			if (otherr2.activeSelf)
-			{
-				Player2  = GameObject.Find("Otherr2");
-				otherr2.SetActive (true);
-			}*/
+		//player1
+		if (buddy1.activeSelf)
+		{
+			buddy1  = GameObject.Find("Buddy1");
+			player1 = buddy1.transform;
 		}
+		if (stela1.activeSelf)
+		{
+			stela1  = GameObject.Find("Stela1");
+			player1 = stela1.transform;
+		}
+		/*if (other1.activeSelf)
+		{
+			Player1  = GameObject.Find("Other1");
+		}
+		if (otherr1.activeSelf)
+		{
+			Player1  = GameObject.Find("Otherr1");
+		}*/
+
+		//player2
+		if (buddy2.activeSelf)
+		{
+			buddy2 = GameObject.Find("Buddy2");
+			player2 = buddy2.transform;
+		}
+		if (stela2.activeSelf)
+		{
+			stela2 = GameObject.Find("Stela2");
+			player2 = stela2.transform;
+		}
+		/*if (other2.activeSelf)
+		{
+			Player2  = GameObject.Find("Other2");
+		}
+		if (otherr2.activeSelf)
+		{
+			Player2  = GameObject.Find("Otherr2");
+		}*/
 	}
 
     void Update()
