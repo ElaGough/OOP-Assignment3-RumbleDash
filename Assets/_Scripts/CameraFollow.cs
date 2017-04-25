@@ -96,7 +96,7 @@ public class CameraFollow : MonoBehaviour {
 		if (stela2.activeSelf)
 		{
 			stela2 = GameObject.Find("Stela2");
-			stela2 = stela2.transform;
+			player2 = stela2.transform;
 			stela2.SetActive (true);
 		}
 		/*if (other2.activeSelf)

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject otherr2;
 
 	public GameObject timer;
+	public GameObject player1text;
+	public GameObject player2text;
 	//bool time;
 
     public int P1Life;
@@ -48,7 +50,27 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		StartCoroutine("LoseTime");
+		//setting up saveVar
+		Scene currentScene = SceneManager.GetActiveScene ();
+		string sceneName = currentScene.name;
+
+		if (sceneName == "Default" || sceneName == "SnowLevel" ||sceneName == "SpaceLevel") {
+			StartCoroutine ("LoseTime");
+			player1text.SetActive (true);
+			player2text.SetActive (true);
+			timer.SetActive (true);
+		}
+
+		if (sceneName == "MenuScreen" || sceneName == "BackStory" || sceneName == "ControlsScreen" || sceneName == "CharacterSelect" || sceneName == "LevelSelect") {
+			buddy1.SetActive (false);
+			buddy2.SetActive (false);
+			stela1.SetActive (false);
+			stela2.SetActive (false);
+			other1.SetActive (false);
+			other2.SetActive (false);
+			otherr1.SetActive (false);
+			otherr2.SetActive (false);
+		}
 
 		//character select
 		//player1
