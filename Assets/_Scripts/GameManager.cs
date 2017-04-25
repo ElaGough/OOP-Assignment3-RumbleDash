@@ -50,14 +50,23 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		//player1 = null;
-		//player2 = null;
 
 		//setting up saveVar
 		Scene currentScene = SceneManager.GetActiveScene ();
 		string sceneName = currentScene.name;
 
 		//character select
+		if (sceneName == "CharacterSelect") {
+			buddy1.SetActive (true);
+			buddy2.SetActive (true);
+			stela1.SetActive (false);
+			stela2.SetActive (false);
+			other1.SetActive (false);
+			other2.SetActive (false);
+			otherr1.SetActive (false);
+			otherr2.SetActive (false);
+		}
+
 		//player1
 		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
 			if (buddy1.activeSelf) {
@@ -98,18 +107,6 @@ public class GameManager : MonoBehaviour {
 				player2  = GameObject.Find("Otherr2");
 				otherr2.SetActive (true);
 			}*/
-		}
-	
-
-		if (sceneName == "CharacterSelect") {
-			buddy1.SetActive (true);
-			buddy2.SetActive (true);
-			stela1.SetActive (false);
-			stela2.SetActive (false);
-			other1.SetActive (false);
-			other2.SetActive (false);
-			otherr1.SetActive (false);
-			otherr2.SetActive (false);
 		}
 
 		//activating canvas for game
