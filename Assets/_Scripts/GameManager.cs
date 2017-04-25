@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour {
 			//timer.SetActive (false);
 			p1active = false;
             player1.SetActive(false);
-			player1 = null;
             p2Wins.SetActive(true);
 			if (P2Life <= 1 ) {
 				P2Life++;
