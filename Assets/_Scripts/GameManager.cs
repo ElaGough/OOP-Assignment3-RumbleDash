@@ -50,20 +50,60 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		//player1 = null;
+		//player2 = null;
+
 		//setting up saveVar
 		Scene currentScene = SceneManager.GetActiveScene ();
 		string sceneName = currentScene.name;
 
-		if (sceneName == "Default" || sceneName == "SnowLevel" ||sceneName == "SpaceLevel") {
-			StartCoroutine ("LoseTime");
-			player1text.SetActive (true);
-			player2text.SetActive (true);
-			timer.SetActive (true);
-		}
+		//character select
+		//player1
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			if (buddy1.activeSelf) {
+				player1 = GameObject.Find ("Buddy1");
+				buddy1.SetActive (true);
+			}
+			if (stela1.activeSelf) {
+				player1 = GameObject.Find ("Stela1");
+				stela1.SetActive (true);
+			}
+			/*if (other1.activeSelf)
+			{
+				player1  = GameObject.Find("Other1");
+				other1.SetActive (true);
+			}
+			if (otherr1.activeSelf)
+			{
+				player1  = GameObject.Find("Otherr1");
+				otherr1.SetActive (true);
+			}*/
 
-		if (sceneName == "MenuScreen" || sceneName == "BackStory" || sceneName == "ControlsScreen" || sceneName == "CharacterSelect" || sceneName == "LevelSelect") {
-			buddy1.SetActive (false);
-			buddy2.SetActive (false);
+			//player2
+			if (buddy2.activeSelf) {
+				player2 = GameObject.Find ("Buddy2");
+				buddy2.SetActive (true);
+			}
+			if (stela2.activeSelf) {
+				player2 = GameObject.Find ("Stela2");
+				stela2.SetActive (true);
+			}
+			/*if (other2.activeSelf)
+			{
+				player2  = GameObject.Find("Other2");
+				other2.SetActive (true);
+			}
+			if (otherr2.activeSelf)
+			{
+				player2  = GameObject.Find("Otherr2");
+				otherr2.SetActive (true);
+			}*/
+		}
+	
+
+		if (sceneName == "CharacterSelect") {
+			buddy1.SetActive (true);
+			buddy2.SetActive (true);
 			stela1.SetActive (false);
 			stela2.SetActive (false);
 			other1.SetActive (false);
@@ -72,54 +112,21 @@ public class GameManager : MonoBehaviour {
 			otherr2.SetActive (false);
 		}
 
-		//character select
-		//player1
-		if (buddy1.activeSelf)
-		{
-			player1  = GameObject.Find("Buddy1");
-			buddy1.SetActive (true);
+		//activating canvas for game
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			StartCoroutine ("LoseTime");
+			player1text.SetActive (true);
+			player2text.SetActive (true);
+			timer.SetActive (true);
 		}
-		if (stela1.activeSelf)
-		{
-			player1  = GameObject.Find("Stela1");
-			stela1.SetActive (true);
-		}
-		/*if (other1.activeSelf)
-		{
-			player1  = GameObject.Find("Other1");
-			other1.SetActive (true);
-		}
-		if (otherr1.activeSelf)
-		{
-			player1  = GameObject.Find("Otherr1");
-			otherr1.SetActive (true);
-		}*/
 
-		//player2
-		if (buddy2.activeSelf)
-		{
-			player2  = GameObject.Find("Buddy2");
-			buddy2.SetActive (true);
-		}
-		if (stela2.activeSelf)
-		{
-			player2 = GameObject.Find("Stela2");
-			stela2.SetActive (true);
-		}
-		/*if (other2.activeSelf)
-		{
-			player2  = GameObject.Find("Other2");
-			other2.SetActive (true);
-		}
-		if (otherr2.activeSelf)
-		{
-			player2  = GameObject.Find("Otherr2");
-			otherr2.SetActive (true);
-		}*/
+
 	}
 	
-	// Update is called once per frame
+	//Update is called once per frame
 	void Update () {
+		Scene currentScene = SceneManager.GetActiveScene ();
+		string sceneName = currentScene.name;
 
 		//win screens
         if ((P1Life <= 0) && (P2Life <= 0))
@@ -188,34 +195,36 @@ public class GameManager : MonoBehaviour {
 
 
 		//Checking isPaused
-		if (isPaused) {
-			pauseScreen.SetActive (true);
-			player1.SetActive(false);
-			player2.SetActive(false);
-		} if (!isPaused) {
-			pauseScreen.SetActive (false);
-			player1.SetActive(true);
-			player2.SetActive(true);
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			if (isPaused) {
+				pauseScreen.SetActive (true);
+				player1.SetActive (false);
+				player2.SetActive (false);
+			}
+			if (!isPaused) {
+				pauseScreen.SetActive (false);
+				player1.SetActive (true);
+				player2.SetActive (true);
+			}
 		}
 
         //Winning and Pause Screen for getting to the flag - replay, new game, menu
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-		if (Input.GetKeyDown(KeyCode.N))
-		{
-			SceneManager.LoadScene(characterSelect);
-		}
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            SceneManager.LoadScene(mainMenu);
-        }
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (isPaused) {
-				isPaused = false;
-			} else if (!isPaused) {
-				isPaused = true;
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			if (Input.GetKeyDown (KeyCode.P)) {
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+			}
+			if (Input.GetKeyDown (KeyCode.N)) {
+				SceneManager.LoadScene (characterSelect);
+			}
+			if (Input.GetKeyDown (KeyCode.M)) {
+				SceneManager.LoadScene (mainMenu);
+			}
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				if (isPaused) {
+					isPaused = false;
+				} else if (!isPaused) {
+					isPaused = true;
+				}
 			}
 		}
     }
@@ -224,49 +233,61 @@ public class GameManager : MonoBehaviour {
 	//player loosing hearts
     public void HurtP1()
     {
-		if (p1active == true &&
-			p2active == true) {
-			P1Life -= 1;
+		Scene currentScene = SceneManager.GetActiveScene ();
+		string sceneName = currentScene.name;
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			if (p1active == true &&
+			   p2active == true) {
+				P1Life -= 1;
 
-			for (int i = 0; i < p1Hearts.Length; i++) {
-				if (P1Life > i) {
-					p1Hearts [i].SetActive (true);
-				} else {
-					p1Hearts [i].SetActive (false);
+				for (int i = 0; i < p1Hearts.Length; i++) {
+					if (P1Life > i) {
+						p1Hearts [i].SetActive (true);
+					} else {
+						p1Hearts [i].SetActive (false);
+					}
 				}
-			}
 
-			hitSound.Play ();
+				hitSound.Play ();
+			}
 		}
     }
 
     public void HurtP2()
     {
-		if (p1active == true &&
-		    p2active == true) {
-			P2Life -= 1;
+		Scene currentScene = SceneManager.GetActiveScene ();
+		string sceneName = currentScene.name;
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			if (p1active == true &&
+			   p2active == true) {
+				P2Life -= 1;
 
-			for (int i = 0; i < p2Hearts.Length; i++) {
-				if (P2Life > i) {
-					p2Hearts [i].SetActive (true);
-				} else {
-					p2Hearts [i].SetActive (false);
+				for (int i = 0; i < p2Hearts.Length; i++) {
+					if (P2Life > i) {
+						p2Hearts [i].SetActive (true);
+					} else {
+						p2Hearts [i].SetActive (false);
+					}
 				}
-			}
 
-			hitSound.Play ();
+				hitSound.Play ();
+			}
 		}
     }
 
 	//timer
 	IEnumerator LoseTime()
 	{
-		while (true) {
-			if (isPaused) {
-				yield return null;
-			} else {
-				yield return new WaitForSeconds (1);
-				timeRemaining--;
+		Scene currentScene = SceneManager.GetActiveScene ();
+		string sceneName = currentScene.name;
+		if (sceneName == "Default" || sceneName == "SnowLevel" || sceneName == "SpaceLevel") {
+			while (true) {
+				if (isPaused) {
+					yield return null;
+				} else {
+					yield return new WaitForSeconds (1);
+					timeRemaining--;
+				}
 			}
 		}
 	}
