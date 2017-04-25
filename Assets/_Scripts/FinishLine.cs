@@ -38,7 +38,7 @@ public class FinishLine : MonoBehaviour {
         {
 			GameObject.Find("Canvas").GetComponent<GameManager>().StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
-			GameObject.Find("Canvas").GetComponent<GameManager>().player1.SetActive(false);
+			tag("Player1").SetActive(false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().player2.SetActive(false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().draw.SetActive(true);
         }
