@@ -11,6 +11,15 @@ public class GameManager : MonoBehaviour {
 	bool p1active = true;
 	bool p2active = true;
 
+	public GameObject buddy1;
+	public GameObject stela1;
+	public GameObject other1;
+	public GameObject otherr1;
+	public GameObject buddy2;
+	public GameObject stela2;
+	public GameObject other2;
+	public GameObject otherr2;
+
 	public GameObject timer;
 	//bool time;
 
@@ -40,12 +49,57 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		StartCoroutine("LoseTime");
+
+		//character select
+		//player1
+		if (buddy1.activeSelf)
+		{
+			player1  = GameObject.Find("Buddy1");
+			buddy1.SetActive (true);
+		}
+		if (stela1.activeSelf)
+		{
+			player1  = GameObject.Find("Stela1");
+			stela1.SetActive (true);
+		}
+		/*if (other1.activeSelf)
+		{
+			player1  = GameObject.Find("Other1");
+			other1.SetActive (true);
+		}
+		if (otherr1.activeSelf)
+		{
+			player1  = GameObject.Find("Otherr1");
+			otherr1.SetActive (true);
+		}*/
+
+		//player2
+		if (buddy2.activeSelf)
+		{
+			player2  = GameObject.Find("Buddy2");
+			buddy2.SetActive (true);
+		}
+		if (stela2.activeSelf)
+		{
+			player2 = GameObject.Find("Stela2");
+			stela2.SetActive (true);
+		}
+		/*if (other2.activeSelf)
+		{
+			player2  = GameObject.Find("Other2");
+			other2.SetActive (true);
+		}
+		if (otherr2.activeSelf)
+		{
+			player2  = GameObject.Find("Otherr2");
+			otherr2.SetActive (true);
+		}*/
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//time = true;
 
+		//win screens
         if ((P1Life <= 0) && (P2Life <= 0))
         {
 			StopCoroutine ("LoseTime");
