@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     public LayerMask whatIsGround;
     public bool isGrounded;
 
+	private bool doubleJumped;
+
     private Animator anim;
 
     public GameObject ball;
@@ -39,6 +41,15 @@ public class PlayerController : MonoBehaviour {
 
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
+		if (Input.GetKeyDown(jump) && isGrounded)
+		{
+			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+		}
+
+		if (Input.GetKeyDown (jump) && !doubleJumped && !isGrounded) {
+			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+		}
+
 		if (Input.GetKey(left))
         {
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
@@ -49,12 +60,7 @@ public class PlayerController : MonoBehaviour {
         {
             theRB.velocity = new Vector2(0, theRB.velocity.y);
         }
-
-        if (Input.GetKeyDown(jump) && isGrounded)
-        {
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-        }
-
+			
         if (Input.GetKeyDown(throwBall))
         {
             GameObject ballClone = (GameObject)Instantiate(ball, throwPoint.position, throwPoint.rotation);
