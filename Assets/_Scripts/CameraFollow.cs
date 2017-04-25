@@ -18,9 +18,18 @@ public class CameraFollow : MonoBehaviour {
         transform.position = buddy.transform.position + offset;
 	}*/
 
-    public Transform Player1, Player2;
+    public Transform player1, player2;
     public float minSizeY;
     public float maxSizeY;
+
+	public GameObject buddy1;
+	public GameObject stela1;
+	public GameObject other1;
+	public GameObject otherr1;
+	public GameObject buddy2;
+	public GameObject stela2;
+	public GameObject other2;
+	public GameObject otherr2;
 
     void SetCameraPos()
     {
@@ -52,19 +61,18 @@ public class CameraFollow : MonoBehaviour {
             camSizeX * Screen.height / Screen.width, minSizeY), minSizeY, maxSizeY);
     }
 	void Start() {
-		FindObjectOfType<GameManager> ().Start();
 
 		//player1
 		if (buddy1.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start ();
-			Player1  = Transform.Find("Buddy1");
+			buddy1  = GameObject.Find("Buddy1");
+			player1 = buddy1.transform;
 			buddy1.SetActive (true);
 		}
 		if (stela1.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start ();
-			Player1  = Transform.Find("Stela1");
+			stela1  = GameObject.Find("Stela1");
+			player1 = stela1.transform;
 			stela1.SetActive (true);
 		}
 		/*if (other1.activeSelf)
@@ -81,13 +89,14 @@ public class CameraFollow : MonoBehaviour {
 		//player2
 		if (buddy2.activeSelf)
 		{
-			Player2 = Transform.Find("Buddy2");
+			buddy2 = GameObject.Find("Buddy2");
+			player2 = buddy2.transform;
 			buddy2.SetActive (true);
 		}
 		if (stela2.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start ();
-			Player2 = Transform.Find("Stela2");
+			stela2 = GameObject.Find("Stela2");
+			stela2 = stela2.transform;
 			stela2.SetActive (true);
 		}
 		/*if (other2.activeSelf)
