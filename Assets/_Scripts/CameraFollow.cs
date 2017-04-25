@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour {
         transform.position = buddy.transform.position + offset;
 	}*/
 
-    public Transform player1, player2;
+    public Transform Player1, Player2;
     public float minSizeY;
     public float maxSizeY;
 
@@ -51,6 +51,55 @@ public class CameraFollow : MonoBehaviour {
         GetComponent<Camera>().orthographicSize = Mathf.Clamp(Mathf.Max(height, 
             camSizeX * Screen.height / Screen.width, minSizeY), minSizeY, maxSizeY);
     }
+	void Start() {
+		//player1
+		if (buddy1.activeSelf)
+		{
+			FindObjectOfType<GameManager> ().Start()
+			Player1  = GameObject.Find("Buddy1");
+			buddy1.SetActive (true);
+		}
+		if (stela1.activeSelf)
+		{
+			FindObjectOfType<GameManager> ().Start()
+			Player1  = GameObject.Find("Stela1");
+			stela1.SetActive (true);
+		}
+		/*if (other1.activeSelf)
+		{
+			Player1  = GameObject.Find("Other1");
+			other1.SetActive (true);
+		}
+		if (otherr1.activeSelf)
+		{
+			Player1  = GameObject.Find("Otherr1");
+			otherr1.SetActive (true);
+		}*/
+
+		//player2
+		if (buddy2.activeSelf)
+		{
+			FindObjectOfType<GameManager> ().Start()
+			Player2 = GameObject.Find("Buddy2");
+			buddy2.SetActive (true);
+		}
+		if (stela2.activeSelf)
+		{
+			FindObjectOfType<GameManager> ().Start()
+			Player2 = GameObject.Find("Stela2");
+			stela2.SetActive (true);
+		}
+		/*if (other2.activeSelf)
+		{
+			Player2  = GameObject.Find("Other2");
+			other2.SetActive (true);
+		}
+		if (otherr2.activeSelf)
+		{
+			Player2  = GameObject.Find("Otherr2");
+			otherr2.SetActive (true);
+		}*/
+	}
 
     void Update()
     {
