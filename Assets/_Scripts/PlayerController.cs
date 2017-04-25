@@ -38,18 +38,22 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		//player jumping
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
 
+		if (isGrounded)
+			doubleJumped = false;
+		
 		if (Input.GetKeyDown(jump) && isGrounded)
 		{
 			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
 		}
-
 		if (Input.GetKeyDown (jump) && !doubleJumped && !isGrounded) {
 			theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+			doubleJumped = true;
 		}
 
+		//player moving left and right
 		if (Input.GetKey(left))
         {
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour {
             theRB.velocity = new Vector2(0, theRB.velocity.y);
         }
 			
+		//player shooting
         if (Input.GetKeyDown(throwBall))
         {
             GameObject ballClone = (GameObject)Instantiate(ball, throwPoint.position, throwPoint.rotation);
@@ -70,6 +75,7 @@ public class PlayerController : MonoBehaviour {
             throwSound.Play();
         }
 
+		//turning animation
         if (theRB.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
