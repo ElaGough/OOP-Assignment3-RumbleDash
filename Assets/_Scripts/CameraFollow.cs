@@ -52,17 +52,19 @@ public class CameraFollow : MonoBehaviour {
             camSizeX * Screen.height / Screen.width, minSizeY), minSizeY, maxSizeY);
     }
 	void Start() {
+		FindObjectOfType<GameManager> ().Start();
+
 		//player1
 		if (buddy1.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start()
-			Player1  = GameObject.Find("Buddy1");
+			FindObjectOfType<GameManager> ().Start ();
+			Player1  = Transform.Find("Buddy1");
 			buddy1.SetActive (true);
 		}
 		if (stela1.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start()
-			Player1  = GameObject.Find("Stela1");
+			FindObjectOfType<GameManager> ().Start ();
+			Player1  = Transform.Find("Stela1");
 			stela1.SetActive (true);
 		}
 		/*if (other1.activeSelf)
@@ -79,14 +81,13 @@ public class CameraFollow : MonoBehaviour {
 		//player2
 		if (buddy2.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start()
-			Player2 = GameObject.Find("Buddy2");
+			Player2 = Transform.Find("Buddy2");
 			buddy2.SetActive (true);
 		}
 		if (stela2.activeSelf)
 		{
-			FindObjectOfType<GameManager> ().Start()
-			Player2 = GameObject.Find("Stela2");
+			FindObjectOfType<GameManager> ().Start ();
+			Player2 = Transform.Find("Stela2");
 			stela2.SetActive (true);
 		}
 		/*if (other2.activeSelf)
