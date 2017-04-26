@@ -58,56 +58,80 @@ public class GameManager : MonoBehaviour {
 		{
 			buddy1.SetActive (true);
 			stela1.SetActive (false);
+			other1.SetActive (false);
+			otherr1.SetActive (false);
 			player1  = GameObject.Find("Buddy1");
 		}
 		else if (CharacterLevelSelect.stela1bool == true)
 		{
 			stela1.SetActive (true);
 			buddy1.SetActive (false);
+			other1.SetActive (false);
+			otherr1.SetActive (false);
 			player1  = GameObject.Find("Stela1");
 		}
-		/*if (other1.activeSelf)
+		else if (CharacterLevelSelect.other1bool == true)
 		{
-			player1  = GameObject.Find("Other1");
+			buddy1.SetActive (false);
+			stela1.SetActive (false);
 			other1.SetActive (true);
+			otherr1.SetActive (false);
+			player1  = GameObject.Find("Other1");
 		}
-		if (otherr1.activeSelf)
+		else if (CharacterLevelSelect.otherr1bool == true)
 		{
-			player1  = GameObject.Find("Otherr1");
+			buddy1.SetActive (false);
+			stela1.SetActive (false);
+			other1.SetActive (false);
 			otherr1.SetActive (true);
-		}*/
+			player1  = GameObject.Find("Otherr1");
+		}
 
 		//player2
 		if (CharacterLevelSelect.buddy2bool == true)
 		{
 			buddy2.SetActive (true);
 			stela2.SetActive (false);
+			other2.SetActive (false);
+			otherr2.SetActive (false);
 			player2  = GameObject.Find("Buddy2");
 		}
 		else if (CharacterLevelSelect.stela2bool == true)
 		{
 			stela2.SetActive (true);
 			buddy2.SetActive (false);
+			other2.SetActive (false);
+			otherr2.SetActive (false);
 			player2 = GameObject.Find("Stela2");
 		}
-		/*if (other2.activeSelf)
-		{
-			player2  = GameObject.Find("Other2");
+		if (CharacterLevelSelect.other2bool == true)
+		{ 
+			stela2.SetActive (false);
+			buddy2.SetActive (false);
 			other2.SetActive (true);
+			otherr2.SetActive (false);
+			player2  = GameObject.Find("Other2");
 		}
-		if (otherr2.activeSelf)
+		if (CharacterLevelSelect.otherr2bool == true)
 		{
-			player2  = GameObject.Find("Otherr2");
+			stela2.SetActive (false);
+			buddy2.SetActive (false);
+			other2.SetActive (false);
 			otherr2.SetActive (true);
-		}*/
+			player2  = GameObject.Find("Otherr2");
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		buddy1 = GameObject.Find("Buddy1");
 		stela1 = GameObject.Find("Stela1");
+		other1 = GameObject.Find("Other1");
+		otherr1 = GameObject.Find("Otherr1");
 		buddy2 = GameObject.Find("Buddy2");
 		stela2 = GameObject.Find("Stela2");
+		other2 = GameObject.Find("Other2");
+		otherr2 = GameObject.Find("Otherr2");
 
 		//win screens
 		if ((P1Life <= 0 && P2Life <= 0))
