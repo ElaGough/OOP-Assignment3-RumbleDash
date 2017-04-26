@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour {
 		otherr2 = GameObject.Find("Otherr2");
 
 		//win screens
-		if ((P1Life <= 0 && P2Life <= 0))
+		if ((P1Life <= 0 && P2Life <= 0) || (FinishLine.P1flag == true && FinishLine.P2flag == true))
         {
 			StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour {
             player2.SetActive(false);
             draw.SetActive(true);
         }
-		else if ((P1Life <= 0 && P2Life > 0))
+		else if ((P1Life <= 0 && P2Life > 0) || (FinishLine.P1flag == false && FinishLine.P2flag == true))
         {
 			StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour {
 				P2Life++;
 			}
         }
-		else if ((P2Life <= 0 && P1Life > 0))
+		else if ((P2Life <= 0 && P1Life > 0) || (FinishLine.P1flag == true && FinishLine.P2flag == false))
         {
 			StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
