@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		FinishLine.P1flag = false;
+		FinishLine.P2flag = false;
 
 		StartCoroutine("LoseTime");
 
@@ -165,8 +166,7 @@ public class GameManager : MonoBehaviour {
 			}
         }
 
-		FinishLine.P1flag = false;
-		FinishLine.P2flag = false;
+
 
 		//timer condidtions
 		countdownText.text = (""+timeRemaining);
