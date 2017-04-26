@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour {
 	public bool p1active = true;
 	public bool p2active = true;
 
-	public GameObject buddy1 = GameObject.Find("Buddy1");
-	public GameObject stela1 = GameObject.Find("Stela1");
+	public GameObject buddy1;
+	public GameObject stela1;
 	public GameObject other1;
 	public GameObject otherr1;
-	public GameObject buddy2 = GameObject.Find("Buddy2");
-	public GameObject stela2 = GameObject.Find("Stela2");
+	public GameObject buddy2;
+	public GameObject stela2;
 	public GameObject other2;
 	public GameObject otherr2;
 
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
 	public string characterSelect;
 
 	//stuff for timer
-	public int timeRemaining = 10;
+	private int timeRemaining = SetTime.time;
 	public Text countdownText;
 
 	//for pause screen
@@ -54,13 +54,13 @@ public class GameManager : MonoBehaviour {
 
 		//character select
 		//player1
-		if (buddy1.activeSelf)
+		if (CharacterLevelSelect.buddy1bool == true)
 		{
 			player1  = GameObject.Find("Buddy1");
 			buddy1.SetActive (true);
 			stela1.SetActive (false);
 		}
-		else if (stela1.activeSelf)
+		else if (CharacterLevelSelect.stela1bool == true)
 		{
 			player1  = GameObject.Find("Stela1");
 			stela1.SetActive (true);
@@ -78,13 +78,13 @@ public class GameManager : MonoBehaviour {
 		}*/
 
 		//player2
-		if (buddy2.activeSelf)
+		if (CharacterLevelSelect.buddy2bool == true)
 		{
 			player2  = GameObject.Find("Buddy2");
 			buddy2.SetActive (true);
 			stela2.SetActive (false);
 		}
-		else if (stela2.activeSelf)
+		else if (CharacterLevelSelect.stela2bool == true)
 		{
 			player2 = GameObject.Find("Stela2");
 			stela2.SetActive (true);
