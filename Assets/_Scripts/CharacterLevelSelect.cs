@@ -27,14 +27,14 @@ public class CharacterLevelSelect : MonoBehaviour {
 	public Button other2button;
 	public Button otherr2button;
 
-	public bool buddy1bool = false;
-	public bool stela1bool = false;
-	public bool other1bool = false;
-	public bool otherr1bool = false;
-	public bool buddy2bool = false;
-	public bool stela2bool = false;
-	public bool other2bool = false;
-	public bool otherr2bool = false;
+	public static bool buddy1bool;
+	public static bool stela1bool;
+	public static bool other1bool;
+	public static bool otherr1bool;
+	public static bool buddy2bool;
+	public static bool stela2bool;
+	public static bool other2bool;
+	public static bool otherr2bool;
 
 	//private GameObject b1Text = GameObject.Find ("b1Text");
 
