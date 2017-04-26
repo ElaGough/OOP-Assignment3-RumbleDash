@@ -102,7 +102,7 @@ public class CameraFollow : MonoBehaviour {
 		}
 		if (otherr2.activeSelf)
 		{
-			otherr2  = GameObject.Find("Otherr2");
+			otherr2  = GameObject.Find("Other2");
 			player2 = otherr2.transform;
 		}
 	}
