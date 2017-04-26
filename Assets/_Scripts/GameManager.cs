@@ -165,6 +165,9 @@ public class GameManager : MonoBehaviour {
 			}
         }
 
+		FinishLine.P1flag = false;
+		FinishLine.P2flag = false;
+
 		//timer condidtions
 		countdownText.text = (""+timeRemaining);
 
