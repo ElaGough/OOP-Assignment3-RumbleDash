@@ -64,9 +64,7 @@ public class FinishLine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		P1 = GameObject.FindGameObjectWithTag("Player1");
-		P2 = GameObject.FindGameObjectWithTag("Player2");
+		
 
         P1Flag = Physics2D.OverlapCircle(P1flagCheckPoint.position, flagCheckRadius, whatIsFlagLine);
         P2Flag = Physics2D.OverlapCircle(P2flagCheckPoint.position, flagCheckRadius, whatIsFlagLine);
@@ -75,8 +73,10 @@ public class FinishLine : MonoBehaviour {
         {
 			GameObject.Find("Canvas").GetComponent<GameManager>().StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
-			P1.SetActive(false);
-			P2.SetActive(false);
+			GameObject.Find("Canvas").GetComponent<GameManager>().player1.SetActive(false);
+			GameObject.Find("Canvas").GetComponent<GameManager>().player2.SetActive(false);
+			player1.SetActive(false);
+			player2.SetActive(false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().draw.SetActive(true);
         }
         else if ((P1Flag == true) && (P2Flag == false))
@@ -84,7 +84,8 @@ public class FinishLine : MonoBehaviour {
 			GameObject.Find("Canvas").GetComponent<GameManager>().StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().p2active = false;
-			P2.SetActive(false);
+			GameObject.Find("Canvas").GetComponent<GameManager>().player2.SetActive(false);
+			player2.SetActive(false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().p1Wins.SetActive(true);
         }
         else if ((P1Flag == false) && (P2Flag == true))
@@ -92,7 +93,9 @@ public class FinishLine : MonoBehaviour {
 			GameObject.Find("Canvas").GetComponent<GameManager>().StopCoroutine ("LoseTime");
 			//timer.SetActive (false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().p1active = false;
-			GameObject.FindGameObjectWithTag("Player1").SetActive(false);
+			//GameObject.FindGameObjectWithTag("Player1").SetActive(false);
+			GameObject.Find("Canvas").GetComponent<GameManager>().player1.SetActive(false);
+			player1.SetActive(false);
 			GameObject.Find("Canvas").GetComponent<GameManager>().p2Wins.SetActive(true);
         }
         
