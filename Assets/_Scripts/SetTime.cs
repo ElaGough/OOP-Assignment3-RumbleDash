@@ -23,6 +23,8 @@ public class SetTime : MonoBehaviour {
 
 	public void DownButton()
 	{
-		time = time - 5;
+		if (time > 0) {
+			time = time - 5;
+		}
 	}
 }
