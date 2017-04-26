@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterLevelSelect : MonoBehaviour {
 
+	public string levelsScene;
+
 	public bool p1active = false;
 	public bool p2active = false;
 
@@ -165,6 +167,14 @@ public class CharacterLevelSelect : MonoBehaviour {
 		other2bool = false;
 		otherr2bool = true;
 		p2active = true;
+	}
+
+	public void Next()
+	{
+		if ((buddy1bool == true || stela1bool == true || other1bool == true || otherr1bool == true) && (buddy2bool == true || stela2bool == true || other2bool == true || otherr2bool == true)) {
+			SceneManager.LoadScene(levelsScene);
+		}
+
 	}
 
 }
