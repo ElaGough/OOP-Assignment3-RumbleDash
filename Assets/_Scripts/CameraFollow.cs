@@ -73,14 +73,16 @@ public class CameraFollow : MonoBehaviour {
 			stela1  = GameObject.Find("Stela1");
 			player1 = stela1.transform;
 		}
-		/*if (other1.activeSelf)
+		if (other1.activeSelf)
 		{
-			Player1  = GameObject.Find("Other1");
+			other1  = GameObject.Find("Other1");
+			player1 = other1.transform;
 		}
 		if (otherr1.activeSelf)
 		{
-			Player1  = GameObject.Find("Otherr1");
-		}*/
+			otherr1  = GameObject.Find("Otherr1");
+			player1 = otherr1.transform;
+		}
 
 		//player2
 		if (buddy2.activeSelf)
@@ -93,14 +95,16 @@ public class CameraFollow : MonoBehaviour {
 			stela2 = GameObject.Find("Stela2");
 			player2 = stela2.transform;
 		}
-		/*if (other2.activeSelf)
+		if (other2.activeSelf)
 		{
-			Player2  = GameObject.Find("Other2");
+			other2  = GameObject.Find("Other2");
+			player2 = other2.transform;
 		}
 		if (otherr2.activeSelf)
 		{
-			Player2  = GameObject.Find("Otherr2");
-		}*/
+			otherr2  = GameObject.Find("Otherr2");
+			player2 = otherr2.transform;
+		}
 	}
 
     void Update()

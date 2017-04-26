@@ -17,6 +17,15 @@ public class FinishLine : MonoBehaviour {
     public GameObject p2Wins;
     public GameObject draw;
 
+	public Transform b1flagCheckPoint;
+	public Transform b2flagCheckPoint;
+	public Transform s1flagCheckPoint;
+	public Transform s2flagCheckPoint;
+	public Transform or1flagCheckPoint;
+	public Transform or2flagCheckPoint;
+	public Transform orr1flagCheckPoint;
+	public Transform orr2flagCheckPoint;
+
     public Transform P1flagCheckPoint;
     public Transform P2flagCheckPoint;
     public float flagCheckRadius;
@@ -24,14 +33,38 @@ public class FinishLine : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+		player1 = GameObject.Find("Canvas").GetComponent<GameManager>().player1;
+		player2 = GameObject.Find("Canvas").GetComponent<GameManager>().player2;
+
+		if (CharacterLevelSelect.buddy1bool == true) {
+			P1flagCheckPoint = b1flagCheckPoint;
+		}
+		else if (CharacterLevelSelect.stela1bool == true) {
+			P1flagCheckPoint = s1flagCheckPoint.transform;
+		}
+		else if (CharacterLevelSelect.other1bool == true) {
+			P1flagCheckPoint = or1flagCheckPoint.transform;
+		}
+		else if (CharacterLevelSelect.otherr1bool == true) {
+			P1flagCheckPoint = orr1flagCheckPoint.transform;
+		}
+		if (CharacterLevelSelect.buddy2bool == true) {
+			P2flagCheckPoint = b2flagCheckPoint.transform;
+		}
+		else if (CharacterLevelSelect.stela2bool == true) {
+			P2flagCheckPoint = s2flagCheckPoint.transform;
+		}
+		else if (CharacterLevelSelect.other2bool == true) {
+			P2flagCheckPoint = or2flagCheckPoint.transform;
+		}
+		else if (CharacterLevelSelect.otherr2bool == true) {
+			P2flagCheckPoint = orr2flagCheckPoint.transform;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		player1 = GameObject.Find("Canvas").GetComponent<GameManager>().player1;
-		player2 = GameObject.Find("Canvas").GetComponent<GameManager>().player2;
 		P1 = GameObject.FindGameObjectWithTag("Player1");
 		P2 = GameObject.FindGameObjectWithTag("Player2");
 
