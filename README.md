@@ -28,12 +28,38 @@ The objective is simple: reach the flag! Oh also do it before the timer runs out
    Creative backstories - Each character has its own interesting and / or slightly tragic back story to bring them to life!    
    We implimented encapsulation by using the access specifiers public, private, and static. We did this by assigning game objects to public    variables in Unity.    
    Our use of array lists for the health bar which increases and decreases health as well as adding and removing hearts as a visual            indicator of the players health.               
-   Buttons that acivate and deactivate game objects. This is used in the character selection scene.            
-   Every script makes use of inheritence.
+   Buttons that acivate and deactivate game objects. This is used in the Character Selection scene.            
+   Most scripts makes use of inheritence.
+   Using static public Boolean to keep track of who's player 1 and 2. These Boolean cross over to different scripts such as GameManager, CameraFollow, and FinishLine.
 
-[logo]: https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/WinterWonderland.png?raw=true "Winter Wonderland Map"
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/HomePage.png?raw=true)]()
 
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/Controls.png?raw=true )]()
+
+#### Character Selection
+Players 1 and 2 must choose a character before continuing. There are Buttons that acivate and deactivate game objects (the character info).
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/BuddyStela.png?raw=true)]()
+
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/KittyCookie.png?raw=true )]()
+
+#### Level Select
+Pick a Level to Play. Adjust the Timer to your liking.
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/LevelSelect.png?raw=true )]()
+
+#### Levels:
+SunshineValley
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/SunshineValley.png?raw=true )]()
+
+WinterWonderland
 [![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/WinterWonderland.png?raw=true )]()
 
+SpaceWars
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/SpaceWars.png?raw=true )]()
 
+#### GameOver
+Once the game is over the Loosing Player can no longer move and No more Lives are taken
+[![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/GameOver.png?raw=true )]()
+Ways to Win: Reach the Flag, Kill your opponent, Have the most lives when the timer stops.
+
+#### Trailer
 To see our no-budget-whatsoever trailer, go to the Trailer section of our repo above!
