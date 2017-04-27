@@ -17,29 +17,19 @@ Platform assembly: C:\Users\MaddField\Desktop\DT228-2\gamesfleadh\OOP assignment
 Loading C:\Users\MaddField\Desktop\DT228-2\gamesfleadh\OOP assignment\Binary\RumbleDash_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\MaddField\Desktop\DT228-2\gamesfleadh\OOP assignment\Binary\RumbleDash_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\MaddField\Desktop\DT228-2\gamesfleadh\OOP assignment\Binary\RumbleDash_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.117 seconds
+- Completed reload, in  0.121 seconds
 Platform assembly: C:\Users\MaddField\Desktop\DT228-2\gamesfleadh\OOP assignment\Binary\RumbleDash_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\MaddField\Desktop\DT228-2\gamesfleadh\OOP assignment\Binary\RumbleDash_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.758699 ms
+UnloadTime: 3.303449 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 15.997875 ms
+UnloadTime: 16.406319 ms
 
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 470.
-Total: 1.096447 ms (FindLiveObjects: 0.086561 ms CreateObjectMapping: 0.040395 ms MarkObjects: 0.863692 ms  DeleteObjects: 0.103873 ms)
+Total: 1.177879 ms (FindLiveObjects: 0.099385 ms CreateObjectMapping: 0.047448 ms MarkObjects: 0.917553 ms  DeleteObjects: 0.111568 ms)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.572216 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 359.
-Total: 0.783543 ms (FindLiveObjects: 0.068608 ms CreateObjectMapping: 0.038471 ms MarkObjects: 0.646968 ms  DeleteObjects: 0.027571 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.243281 ms
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1924.
-Total: 1.368315 ms (FindLiveObjects: 0.276997 ms CreateObjectMapping: 0.074378 ms MarkObjects: 0.977184 ms  DeleteObjects: 0.035907 ms)
-
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 4528 -> priority: 1 
