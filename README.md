@@ -59,7 +59,7 @@ SpaceWars
 #### GameOver
 Once the game is over the Loosing Player can no longer move and No more Lives are taken
 [![Video](https://github.com/ElaGough/OOP-Assignment3-RumbleDash/blob/master/Assets/_Sprites/Levels/Complete/GameOver.png?raw=true )]()
-Ways to Win: Reach the Flag, Kill your opponent, Have the most lives when the timer stops.
+Ways to Win: Reach the Flag, Kill your opponent, Have the most lives when the timer stops. 
 
 #### Trailer
 To see our no-budget-whatsoever trailer, go to the Trailer section of our repo above!
